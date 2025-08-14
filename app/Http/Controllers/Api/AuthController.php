@@ -23,6 +23,8 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        return new ApiResponse(201, $user);
+
         return response()->json([
             'success' => true,
             'message' => 'User registered successfully!',

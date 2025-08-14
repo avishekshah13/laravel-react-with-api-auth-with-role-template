@@ -7,10 +7,10 @@ use Illuminate\Contracts\Support\Responsable;
 class ApiResponse implements Responsable
 {
     protected int $httpCode;
-    protected array $data;
+    protected $data;
     protected string $errorMessage;
 
-    public function __construct(int $httpCode, array $data = [], string $errorMessage = '')
+    public function __construct(int $httpCode, $data = null, string $errorMessage = '')
     {
         $this->httpCode = $httpCode;
         $this->data = $data;
@@ -31,12 +31,12 @@ class ApiResponse implements Responsable
         );
     }
 
-    public static function ok(array $data)
+    public static function ok($data)
     {
         return new static(200, $data);
     }
 
-    public static function created(array $data)
+    public static function created($data)
     {
         return new static(201, $data);
     }
