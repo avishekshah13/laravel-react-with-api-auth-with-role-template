@@ -44,7 +44,7 @@ export function AppSidebar() {
             </SidebarHeader>
 
             <SidebarContent>
-                <NavMain items={mainNavItems} />
+                <NavMain />
             </SidebarContent>
 
             <SidebarFooter>
